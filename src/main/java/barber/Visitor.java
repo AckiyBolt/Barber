@@ -1,10 +1,5 @@
 package barber;
 
-/**
- * Omega
- * Belentsov K.
- * 03.06.15
- */
 public class Visitor extends AHuman {
 
   public boolean isAlive = true;

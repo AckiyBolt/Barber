@@ -1,10 +1,5 @@
 package barber;
 
-/**
- * Omega
- * Belentsov K.
- * 03.06.15
- */
 public class Barber extends AHuman {
 
   private static int VISITORS_LIMIT = 20;

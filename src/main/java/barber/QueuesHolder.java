@@ -3,14 +3,9 @@ package barber;
 import java.util.Deque;
 import java.util.concurrent.LinkedBlockingDeque;
 
-/**
- * Omega
- * Belentsov K.
- * 03.06.15
- */
 public class QueuesHolder {
 
-  private Deque<Visitor> hall   = new LinkedBlockingDeque<Visitor>() {};
+  private Deque<Visitor> hall   = new LinkedBlockingDeque<Visitor>();
   private Deque<Visitor> street = new LinkedBlockingDeque<Visitor>();
 
   public Visitor pullNextVisitor() {
@@ -26,7 +21,7 @@ public class QueuesHolder {
   }
 
   public synchronized boolean tryHoldPlace(Visitor visitor) {
-    if (thereIsEmptySeatsInHall()) {
+    if (thereIsEmptySeatsInHall() && street.size() == 0) {
       hall.addFirst(visitor);
       return true;
     }
